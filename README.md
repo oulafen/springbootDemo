@@ -33,3 +33,8 @@ DELETE  /api/users/id   通过id删除一个user
 @Valid
 ```
 
+### AOP
+
+应用-添加权限验证，在进入模块之前/之后的统一操作
+
+
