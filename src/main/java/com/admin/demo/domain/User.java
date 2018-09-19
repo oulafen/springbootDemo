@@ -3,7 +3,7 @@
  * @Author oulafen
  * @Date 2018/9/19 上午11:21
  **/
-package com.admin.demo;
+package com.admin.demo.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
