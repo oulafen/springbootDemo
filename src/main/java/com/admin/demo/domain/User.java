@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 import java.util.Date;
 
 @Entity
@@ -19,6 +20,8 @@ public class User {
 
     private Integer id;
     private String name;
+
+    @Min(value = 16, message = "未满16岁")
     private Integer age;
     private Date createDate;
 

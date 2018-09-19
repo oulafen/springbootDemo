@@ -1,6 +1,7 @@
 ### 启动
 
 - 方式一
+    
     启动文件右键Run
 - 方式二 
     ```
@@ -15,7 +16,7 @@
 
 ### 接口设计
 
-Restful接口模拟实例
+Restful接口模拟
 ```$xslt
 GET     /api/users      获取user列表
 POST    /api/users      创建一个user
@@ -23,3 +24,12 @@ GET     /api/users/id   通过id查找一个user
 PUT     /api/users/id   通过id更新一个user
 DELETE  /api/users/id   通过id删除一个user
 ```
+
+### 验证表单
+
+未满16岁的不入库
+```
+@Min(value = 16, message = "未满16岁")
+@Valid
+```
+

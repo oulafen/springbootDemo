@@ -3,8 +3,10 @@ package com.admin.demo.controller;
 import com.admin.demo.domain.User;
 import com.admin.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Date;
 
@@ -34,7 +36,12 @@ public class UserController {
      * @Return java.lang.Object
     **/
     @PostMapping(value = "/users")
-    public User userAdd(User user){
+    public User userAdd(@Valid User user, BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            System.out.println(bindingResult.getFieldError().getDefaultMessage());
+            return null;
+        }
+
         user.setName(user.getName());
         user.setAge(user.getAge());
         user.setCreateDate(new Date());
